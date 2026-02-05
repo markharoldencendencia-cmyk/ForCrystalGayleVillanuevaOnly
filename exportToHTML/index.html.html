@@ -1,0 +1,407 @@
+<html>
+<head>
+<title>index.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #d5b778;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bababa;}
+.s3 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+index.html</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;!DOCTYPE </span><span class="s2">html</span><span class="s0">&gt;</span>
+<span class="s0">&lt;html </span><span class="s2">lang</span><span class="s3">=&quot;en&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;head&gt;</span>
+    <span class="s0">&lt;meta </span><span class="s2">charset</span><span class="s3">=&quot;UTF-8&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;meta </span><span class="s2">name</span><span class="s3">=&quot;viewport&quot; </span><span class="s2">content</span><span class="s3">=&quot;width=device-width, initial-scale=1.0&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;title&gt;</span><span class="s1">For Crystal Villanueva❤️</span><span class="s0">&lt;/title&gt;</span>
+    <span class="s0">&lt;link </span><span class="s2">href</span><span class="s3">=&quot;https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&amp;display=swap&quot; </span><span class="s2">rel</span><span class="s3">=&quot;stylesheet&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;script </span><span class="s2">src</span><span class="s3">=&quot;https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js&quot;</span><span class="s0">&gt;&lt;/script&gt;</span>
+    <span class="s0">&lt;style&gt;</span>
+        <span class="s1">:root {</span>
+            <span class="s1">--bg: linear-gradient(135deg, #ffe6f0 0%, #fff5e6 50%, #f0f8ff 100%);</span>
+            <span class="s1">--heart-empty: #ffb3ba;</span>
+            <span class="s1">--heart-full: #ff69b4;</span>
+            <span class="s1">--text-color: #333333;</span>
+            <span class="s1">--accent: #ff8fa3;</span>
+            <span class="s1">--border-radius: 28px;</span>
+            <span class="s1">--leaf-color: #32cd32;</span>
+            <span class="s1">--glow-color: rgba(255, 182, 193, 0.6);</span>
+        <span class="s1">}</span>
+
+        <span class="s1">* { box-sizing: border-box; }</span>
+
+        <span class="s1">body {</span>
+            <span class="s1">margin: 0;</span>
+            <span class="s1">background: var(--bg);</span>
+            <span class="s1">color: var(--text-color);</span>
+            <span class="s1">font-family: 'Poppins', sans-serif;</span>
+            <span class="s1">display: flex;</span>
+            <span class="s1">justify-content: center;</span>
+            <span class="s1">align-items: center;</span>
+            <span class="s1">min-height: 100vh;</span>
+            <span class="s1">overflow: hidden;</span>
+            <span class="s1">user-select: none;</span>
+            <span class="s1">position: relative; /* Added for background positioning */</span>
+        <span class="s1">}</span>
+
+        <span class="s1">/* ADDED: Background Image with Pink Tint */</span>
+        <span class="s1">body::before {</span>
+            <span class="s1">content: &quot;&quot;;</span>
+            <span class="s1">position: fixed;</span>
+            <span class="s1">top: 0; left: 0; width: 100%; height: 100%;</span>
+            <span class="s1">background:</span>
+                <span class="s1">linear-gradient(rgba(255, 105, 180, 0.3), rgba(255, 105, 180, 0.3)), /* Pink Tint Overlay */</span>
+                <span class="s1">url('sunset.jpg') no-repeat center center;</span>
+            <span class="s1">background-size: cover;</span>
+            <span class="s1">filter: blur(10px); /* Blur effect */</span>
+            <span class="s1">transform: scale(1.1); /* Hides white edges from blur */</span>
+            <span class="s1">z-index: -1;</span>
+        <span class="s1">}</span>
+
+        <span class="s1">#secretContent {</span>
+            <span class="s1">display: none;</span>
+            <span class="s1">background: rgba(255, 255, 255, 0.9);</span>
+            <span class="s1">border-radius: var(--border-radius);</span>
+            <span class="s1">padding: 3px;</span>
+            <span class="s1">text-align: left;</span>
+            <span class="s1">width: 90%;</span>
+            <span class="s1">max-width: 500px;</span>
+            <span class="s1">max-height: 80vh;</span>
+            <span class="s1">position: relative;</span>
+            <span class="s1">box-shadow: 0 0 40px rgba(255, 255, 255, 0.8), 0 20px 50px rgba(255, 182, 193, 0.4);</span>
+            <span class="s1">backdrop-filter: blur(25px);</span>
+            <span class="s1">overflow: hidden;</span>
+            <span class="s1">animation: boxReveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards,</span>
+                       <span class="s1">cloudFloat 4s ease-in-out infinite 1.2s;</span>
+        <span class="s1">}</span>
+
+        <span class="s1">#secretContent::before {</span>
+            <span class="s1">content: &quot;&quot;;</span>
+            <span class="s1">position: absolute;</span>
+            <span class="s1">top: 0; left: 0; right: 0; bottom: 0;</span>
+            <span class="s1">z-index: -1;</span>
+            <span class="s1">margin: -3px;</span>
+            <span class="s1">border-radius: inherit;</span>
+            <span class="s1">background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a1c4fd, #c2e9fb);</span>
+            <span class="s1">background-size: 300% 300%;</span>
+            <span class="s1">animation: moveGradient 8s ease infinite;</span>
+        <span class="s1">}</span>
+
+        <span class="s1">@keyframes cloudFloat {</span>
+            <span class="s1">0%, 100% { transform: translateY(0); }</span>
+            <span class="s1">50% { transform: translateY(-15px); }</span>
+        <span class="s1">}</span>
+
+        <span class="s1">@keyframes moveGradient {</span>
+            <span class="s1">0% { background-position: 0% 50%; }</span>
+            <span class="s1">50% { background-position: 100% 50%; }</span>
+            <span class="s1">100% { background-position: 0% 50%; }</span>
+        <span class="s1">}</span>
+
+        <span class="s1">@keyframes boxReveal { from { transform: scale(0.85); opacity: 0; } to { transform: scale(1); opacity: 1; } }</span>
+
+        <span class="s1">.scroll-area {</span>
+            <span class="s1">padding: 40px;</span>
+            <span class="s1">height: 100%;</span>
+            <span class="s1">max-height: 80vh;</span>
+            <span class="s1">overflow-y: auto;</span>
+            <span class="s1">scroll-behavior: smooth;</span>
+            <span class="s1">background: rgba(255, 255, 255, 0.5);</span>
+            <span class="s1">border-radius: calc(var(--border-radius) - 3px);</span>
+        <span class="s1">}</span>
+
+        <span class="s1">.container { text-align: center; width: 90%; max-width: 550px; padding: 40px; }</span>
+        <span class="s1">.heart-wrapper { position: relative; cursor: pointer; transition: transform 0.1s ease; margin: 0 auto; width: fit-content; }</span>
+        <span class="s1">.heart-wrapper:active { transform: scale(0.9); }</span>
+        <span class="s1">.progress-circle { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 220px; height: 220px; z-index: -1; }</span>
+        <span class="s1">.progress-circle svg { width: 100%; height: 100%; transform: rotate(-90deg); }</span>
+        <span class="s1">.progress-circle circle { fill: none; stroke: var(--heart-full); stroke-width: 10; stroke-linecap: round; stroke-dasharray: 628; stroke-dashoffset: 628; transition: stroke-dashoffset 0.3s ease; }</span>
+        <span class="s1">.heart-icon { font-size: 160px; color: var(--heart-empty); }</span>
+        <span class="s1">.heart-fill { position: absolute; top: 0; left: 0; right: 0; font-size: 160px; color: var(--heart-full); clip-path: inset(100% 0 0 0); transition: clip-path 0.3s ease; }</span>
+
+        <span class="s1">h1 { font-size: 1.6rem; color: var(--heart-full); text-align: center; margin-bottom: 25px; }</span>
+        <span class="s1">.reveal-text { margin-bottom: 20px; line-height: 1.7; font-size: 0.95rem; color: #444; }</span>
+
+        <span class="s1">.flower-container {</span>
+            <span class="s1">position: relative; height: 180px; display: flex; flex-direction: column;</span>
+            <span class="s1">align-items: center; justify-content: flex-end; margin-top: 40px;</span>
+            <span class="s1">opacity: 0; transition: opacity 1.5s ease;</span>
+        <span class="s1">}</span>
+
+        <span class="s1">.sway-wrapper {</span>
+            <span class="s1">width: 10px; height: 100px; position: relative;</span>
+            <span class="s1">transform-origin: bottom center;</span>
+        <span class="s1">}</span>
+
+        <span class="s1">.is-dancing { animation: stemDance 3s ease-in-out infinite; }</span>
+
+        <span class="s1">.stem {</span>
+            <span class="s1">width: 6px; height: 0; background: linear-gradient(to bottom, #90ee90, var(--leaf-color));</span>
+            <span class="s1">border-radius: 4px; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);</span>
+            <span class="s1">z-index: 2;</span>
+        <span class="s1">}</span>
+
+        <span class="s1">.stem::before, .stem::after {</span>
+            <span class="s1">content: ''; position: absolute; width: 20px; height: 12px; background: var(--leaf-color);</span>
+            <span class="s1">opacity: 0; transition: opacity 1s ease 2s;</span>
+        <span class="s1">}</span>
+        <span class="s1">.stem::before { top: 45px; left: 5px; border-radius: 0 15px 0 15px; transform: rotate(-15deg); }</span>
+        <span class="s1">.stem::after { top: 65px; right: 5px; border-radius: 15px 0 15px 0; transform: rotate(15deg); }</span>
+
+        <span class="s1">.flower-head {</span>
+            <span class="s1">position: absolute; top: -15px; left: 50%; transform: translate(-50%, -50%) scale(0);</span>
+            <span class="s1">width: 30px; height: 30px; background: #FFD700; border-radius: 50%; z-index: 3;</span>
+        <span class="s1">}</span>
+        <span class="s1">.flower-head::before {</span>
+            <span class="s1">content: ''; position: absolute; top: 50%; left: 50%; width: 25px; height: 25px; background: #ff69b4; border-radius: 50%; transform: translate(-50%, -50%);</span>
+            <span class="s1">box-shadow: 0 -25px 0 #ff69b4, 0 25px 0 #ff69b4, -25px 0 0 #ff69b4, 25px 0 0 #ff69b4, -18px -18px 0 #ff69b4, 18px -18px 0 #ff69b4, -18px 18px 0 #ff69b4, 18px 18px 0 #ff69b4;</span>
+        <span class="s1">}</span>
+
+        <span class="s1">.growing-stem { animation: growStem 2.5s ease-out forwards; }</span>
+        <span class="s1">.blooming-head { animation: bloomFlower 1.5s forwards 2s; }</span>
+        <span class="s1">.show-leaves::before, .show-leaves::after { opacity: 1; }</span>
+
+        <span class="s1">@keyframes growStem { from { height: 0; } to { height: 100px; } }</span>
+        <span class="s1">@keyframes bloomFlower { to { transform: translate(-50%, -50%) scale(1); } }</span>
+        <span class="s1">@keyframes stemDance {</span>
+            <span class="s1">0%, 100% { transform: rotate(-6deg); }</span>
+            <span class="s1">50% { transform: rotate(6deg); }</span>
+        <span class="s1">}</span>
+
+        <span class="s1">.flower-glow {</span>
+            <span class="s1">position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);</span>
+            <span class="s1">width: 120px; height: 120px; background: radial-gradient(circle, var(--glow-color) 0%, rgba(255,255,255,0) 70%);</span>
+            <span class="s1">border-radius: 50%; filter: blur(15px); z-index: 0; opacity: 0; transition: opacity 2s ease;</span>
+        <span class="s1">}</span>
+        <span class="s1">.flower-glow.active { animation: pulseGlow 4s ease-in-out infinite; }</span>
+        <span class="s1">@keyframes pulseGlow { 0%, 100% { opacity: 0.4; transform: translateX(-50%) scale(1); } 50% { opacity: 0.8; transform: translateX(-50%) scale(1.3); } }</span>
+
+        <span class="s1">#nextBtn {</span>
+            <span class="s1">background: var(--heart-full); color: white; border: none; padding: 12px 30px; border-radius: 50px; font-weight: 600; cursor: pointer;</span>
+            <span class="s1">box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4); animation: btnBounce 2s infinite;</span>
+            <span class="s1">transition: transform 0.1s ease;</span>
+        <span class="s1">}</span>
+        <span class="s1">#nextBtn:active { transform: scale(0.95); }</span>
+        <span class="s1">@keyframes btnBounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-5px);} }</span>
+        <span class="s1">.petal { position: fixed; background-color: #ffb3ba; border-radius: 150% 0 150% 0; pointer-events: none; z-index: 100; }</span>
+        <span class="s1">@keyframes petalFall { 0% { transform: translate(0, -10vh) rotate(0deg); opacity: 0; } 10% { opacity: 0.8; } 100% { transform: translate(100vw, 110vh) rotate(720deg); opacity: 0; } }</span>
+    <span class="s0">&lt;/style&gt;</span>
+<span class="s0">&lt;/head&gt;</span>
+<span class="s0">&lt;body&gt;</span>
+
+    <span class="s0">&lt;audio </span><span class="s2">id</span><span class="s3">=&quot;lobbyMusic&quot; </span><span class="s2">loop</span><span class="s0">&gt;&lt;source </span><span class="s2">src</span><span class="s3">=&quot;fortaltal.mp3&quot; </span><span class="s2">type</span><span class="s3">=&quot;audio/mpeg&quot;</span><span class="s0">&gt;&lt;/audio&gt;</span>
+
+    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;container&quot; </span><span class="s2">id</span><span class="s3">=&quot;gameUI&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;heart-wrapper&quot; </span><span class="s2">onclick</span><span class="s3">=&quot;handleTap()&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;progress-circle&quot;</span><span class="s0">&gt;&lt;svg&gt;&lt;circle </span><span class="s2">cx</span><span class="s3">=&quot;110&quot; </span><span class="s2">cy</span><span class="s3">=&quot;110&quot; </span><span class="s2">r</span><span class="s3">=&quot;100&quot; </span><span class="s2">id</span><span class="s3">=&quot;circleProgress&quot;</span><span class="s0">&gt;&lt;/circle&gt;&lt;/svg&gt;&lt;/div&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;heart-icon&quot;</span><span class="s0">&gt;</span><span class="s1">❤️</span><span class="s0">&lt;/div&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;heart-fill&quot; </span><span class="s2">id</span><span class="s3">=&quot;fill&quot;</span><span class="s0">&gt;</span><span class="s1">❤️</span><span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">style</span><span class="s3">=&quot;margin-top:40px; color:white; letter-spacing:2px; font-size:0.8rem; font-weight:bold; text-shadow: 1px 1px 4px rgba(0,0,0,0.3);&quot;</span><span class="s0">&gt;</span><span class="s1">TAP RAPIDLY TO UNLOCK🫶</span><span class="s0">&lt;/div&gt;</span>
+    <span class="s0">&lt;/div&gt;</span>
+
+    <span class="s0">&lt;div </span><span class="s2">id</span><span class="s3">=&quot;secretContent&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;scroll-area&quot; </span><span class="s2">id</span><span class="s3">=&quot;scrollArea&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">id</span><span class="s3">=&quot;slide1&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;h1 </span><span class="s2">id</span><span class="s3">=&quot;mainTitle&quot;</span><span class="s0">&gt;&lt;/h1&gt;</span>
+                <span class="s0">&lt;div </span><span class="s2">id</span><span class="s3">=&quot;messageBody&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+                <span class="s0">&lt;div </span><span class="s2">id</span><span class="s3">=&quot;footerArea&quot; </span><span class="s2">style</span><span class="s3">=&quot;text-align: center; margin-top: 30px; display: none;&quot;</span><span class="s0">&gt;</span>
+                    <span class="s0">&lt;p </span><span class="s2">id</span><span class="s3">=&quot;flowerLabel&quot; </span><span class="s2">style</span><span class="s3">=&quot;font-size: 0.8rem; opacity: 0.7; margin-bottom: 0;&quot;</span><span class="s0">&gt;&lt;/p&gt;</span>
+                    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;flower-container&quot; </span><span class="s2">id</span><span class="s3">=&quot;flowerCont&quot;</span><span class="s0">&gt;</span>
+                        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;flower-glow&quot; </span><span class="s2">id</span><span class="s3">=&quot;glowEffect&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+                        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;sway-wrapper&quot; </span><span class="s2">id</span><span class="s3">=&quot;swayCont&quot;</span><span class="s0">&gt;</span>
+                            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;stem&quot; </span><span class="s2">id</span><span class="s3">=&quot;flowerStem&quot;</span><span class="s0">&gt;</span>
+                                <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;flower-head&quot; </span><span class="s2">id</span><span class="s3">=&quot;flowerHead&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+                            <span class="s0">&lt;/div&gt;</span>
+                        <span class="s0">&lt;/div&gt;</span>
+                    <span class="s0">&lt;/div&gt;</span>
+                <span class="s0">&lt;/div&gt;</span>
+            <span class="s0">&lt;/div&gt;</span>
+
+            <span class="s0">&lt;div </span><span class="s2">id</span><span class="s3">=&quot;nextBtnContainer&quot; </span><span class="s2">style</span><span class="s3">=&quot;text-align: center; margin-top: 30px; display: none; padding-bottom: 20px;&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;button </span><span class="s2">id</span><span class="s3">=&quot;nextBtn&quot; </span><span class="s2">onclick</span><span class="s3">=&quot;showNextSlide()&quot;</span><span class="s0">&gt;</span><span class="s1">Next ❤️</span><span class="s0">&lt;/button&gt;</span>
+            <span class="s0">&lt;/div&gt;</span>
+
+            <span class="s0">&lt;div </span><span class="s2">id</span><span class="s3">=&quot;slide2&quot; </span><span class="s2">style</span><span class="s3">=&quot;display: none;&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;h1 </span><span class="s2">id</span><span class="s3">=&quot;slide2Title&quot;</span><span class="s0">&gt;&lt;/h1&gt;</span>
+                <span class="s0">&lt;div </span><span class="s2">id</span><span class="s3">=&quot;slide2Body&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+            <span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;/div&gt;</span>
+    <span class="s0">&lt;/div&gt;</span>
+
+    <span class="s0">&lt;script&gt;</span>
+        <span class="s1">let progress = 100;</span>
+        <span class="s1">let isUnlocked = false;</span>
+        <span class="s1">const circle = document.getElementById('circleProgress');</span>
+        <span class="s1">const circumference = 2 * Math.PI * 100;</span>
+        <span class="s1">circle.style.strokeDasharray = circumference;</span>
+
+        <span class="s1">const audioCtx = new (window.AudioContext || window.webkitAudioContext)();</span>
+
+        <span class="s1">function playSparkle(freq, delay, vol = 0.4) {</span>
+            <span class="s1">const osc = audioCtx.createOscillator();</span>
+            <span class="s1">const gain = audioCtx.createGain();</span>
+            <span class="s1">osc.type = 'sine';</span>
+            <span class="s1">osc.frequency.setValueAtTime(freq, audioCtx.currentTime + delay);</span>
+            <span class="s1">gain.gain.setValueAtTime(0, audioCtx.currentTime + delay);</span>
+            <span class="s1">gain.gain.linearRampToValueAtTime(vol, audioCtx.currentTime + delay + 0.05);</span>
+            <span class="s1">gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + delay + 0.5);</span>
+            <span class="s1">osc.connect(gain);</span>
+            <span class="s1">gain.connect(audioCtx.destination);</span>
+            <span class="s1">osc.start(audioCtx.currentTime + delay);</span>
+            <span class="s1">osc.stop(audioCtx.currentTime + delay + 0.5);</span>
+        <span class="s1">}</span>
+
+        <span class="s1">const content = {</span>
+            <span class="s1">title: &quot;Happy Valentine's Day, Tal².&quot;,</span>
+            <span class="s1">paragraphs: [</span>
+                <span class="s1">&quot;Di man ko kahatag ug flowers. But I didn't want the day to pass without you receiving something from me.&quot;,</span>
+                <span class="s1">&quot;HAHAHAHA mao ni akong version sa digital bouquet. I worked on this because regardless of the distance, a person as special as you deserves effort.&quot;,</span>
+                <span class="s1">&quot;I just want to remind you that no matter how much time passes or how quiet things get, I still remember you. You still hold that same place in my heart tal², and I still care for you as much as I did before.&quot;,</span>
+                <span class="s1">&quot;I hope you’re doing well today. Always stay safe, Dokiee🫶!!!.&quot;</span>
+            <span class="s1">]</span>
+        <span class="s1">};</span>
+
+        <span class="s1">const slide2Content = {</span>
+            <span class="s1">title: &quot;Wait, one more thing... 🫣&quot;,</span>
+            <span class="s1">paragraphs: [</span>
+                <span class="s1">&quot;I know I am not very good at courting kai ma-cringey-an gyud kog mga message-message HAHA. Sorry kaayo if dili ko pirme clear sa akong intentions...&quot;,</span>
+                <span class="s1">&quot;But bitaw, even if I'm not the best with communication or if I seem a bit awkward sometimes, I hope this small effort makes you smile.&quot;,</span>
+                <span class="s1">&quot;Dili man ko kamao mu-da moves, but I genuinely care about you.&quot;,</span>
+                <span class="s1">&quot;I really hope that soon, I can finally invite you out. 👉👈&quot;,</span>
+                <span class="s1">&quot;Happy Valentine's again, Crystal! ✨&quot;</span>
+            <span class="s1">]</span>
+        <span class="s1">};</span>
+
+        <span class="s1">function handleTap() {</span>
+            <span class="s1">if (isUnlocked) return;</span>
+            <span class="s1">if (audioCtx.state === 'suspended') audioCtx.resume();</span>
+
+            <span class="s1">document.getElementById('lobbyMusic').play().catch(e =&gt; {});</span>
+
+            <span class="s1">const osc = audioCtx.createOscillator();</span>
+            <span class="s1">const g = audioCtx.createGain();</span>
+            <span class="s1">osc.frequency.value = 400 + (100 - progress);</span>
+            <span class="s1">g.gain.setValueAtTime(0.6, audioCtx.currentTime);</span>
+            <span class="s1">g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.15);</span>
+            <span class="s1">osc.connect(g);</span>
+            <span class="s1">g.connect(audioCtx.destination);</span>
+            <span class="s1">osc.start();</span>
+            <span class="s1">osc.stop(audioCtx.currentTime + 0.15);</span>
+
+            <span class="s1">if (navigator.vibrate) navigator.vibrate(15);</span>
+
+            <span class="s1">progress -= 10;</span>
+            <span class="s1">if (progress &lt; 0) progress = 0;</span>
+            <span class="s1">const fillProgress = (100 - progress) / 100;</span>
+            <span class="s1">document.getElementById('fill').style.clipPath = `inset(${progress}% 0 0 0)`;</span>
+            <span class="s1">circle.style.strokeDashoffset = circumference - (fillProgress * circumference);</span>
+            <span class="s1">if (progress &lt;= 0) unlock();</span>
+        <span class="s1">}</span>
+
+        <span class="s1">async function typeEffect(element, text, speed = 40) {</span>
+            <span class="s1">for (let i = 0; i &lt; text.length; i++) {</span>
+                <span class="s1">element.innerHTML += text.charAt(i);</span>
+                <span class="s1">const area = document.getElementById('scrollArea');</span>
+                <span class="s1">area.scrollTo({ top: area.scrollHeight, behavior: 'smooth' });</span>
+
+                <span class="s1">let currentDelay = speed;</span>
+                <span class="s1">const typedSoFar = text.substring(0, i + 1);</span>
+                <span class="s1">if (typedSoFar.endsWith(&quot;heart tal²&quot;)) { currentDelay = 1300; }</span>
+                <span class="s1">else if (text.charAt(i) === '.') { currentDelay = 450; }</span>
+                <span class="s1">await new Promise(r =&gt; setTimeout(r, currentDelay));</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+
+        <span class="s1">async function unlock() {</span>
+            <span class="s1">isUnlocked = true;</span>
+            <span class="s1">[880, 1108, 1318, 1760].forEach((f, i) =&gt; { playSparkle(f, i * 0.1); });</span>
+
+            <span class="s1">document.getElementById('gameUI').style.display = 'none';</span>
+            <span class="s1">document.getElementById('secretContent').style.display = 'block';</span>
+            <span class="s1">confetti({ particleCount: 150, spread: 80, origin: { y: 0.6 } });</span>
+            <span class="s1">createPetals();</span>
+
+            <span class="s1">await new Promise(r =&gt; setTimeout(r, 1200));</span>
+            <span class="s1">await typeEffect(document.getElementById('mainTitle'), content.title, 60);</span>
+            <span class="s1">await new Promise(r =&gt; setTimeout(r, 1500));</span>
+
+            <span class="s1">for (const text of content.paragraphs) {</span>
+                <span class="s1">const p = document.createElement('p');</span>
+                <span class="s1">p.className = 'reveal-text';</span>
+                <span class="s1">document.getElementById('messageBody').appendChild(p);</span>
+                <span class="s1">await typeEffect(p, text, 40);</span>
+                <span class="s1">await new Promise(r =&gt; setTimeout(r, 600));</span>
+            <span class="s1">}</span>
+
+            <span class="s1">document.getElementById('footerArea').style.display = 'block';</span>
+            <span class="s1">await typeEffect(document.getElementById('flowerLabel'), &quot;A little flower to brighten your day -harolddy&quot;, 40);</span>
+
+            <span class="s1">setTimeout(() =&gt; {</span>
+                <span class="s1">document.getElementById('flowerCont').style.opacity = &quot;1&quot;;</span>
+                <span class="s1">const stem = document.getElementById('flowerStem');</span>
+                <span class="s1">stem.classList.add('growing-stem', 'show-leaves');</span>
+                <span class="s1">document.getElementById('flowerHead').classList.add('blooming-head');</span>
+                <span class="s1">document.getElementById('glowEffect').classList.add('active');</span>
+
+                <span class="s1">setTimeout(() =&gt; { document.getElementById('swayCont').classList.add('is-dancing'); }, 2500);</span>
+                <span class="s1">setTimeout(() =&gt; document.getElementById('scrollArea').scrollTo({ top: document.getElementById('scrollArea').scrollHeight, behavior: 'smooth' }), 500);</span>
+                <span class="s1">setTimeout(() =&gt; {</span>
+                    <span class="s1">document.getElementById('nextBtnContainer').style.display = 'block';</span>
+                    <span class="s1">document.getElementById('scrollArea').scrollTo({ top: document.getElementById('scrollArea').scrollHeight, behavior: 'smooth' });</span>
+                <span class="s1">}, 4000);</span>
+            <span class="s1">}, 500);</span>
+        <span class="s1">}</span>
+
+        <span class="s1">async function showNextSlide() {</span>
+            <span class="s1">if (audioCtx.state === 'suspended') audioCtx.resume();</span>
+            <span class="s1">playSparkle(1200, 0, 0.5);</span>
+            <span class="s1">if (navigator.vibrate) navigator.vibrate(20);</span>
+
+            <span class="s1">document.getElementById('slide1').style.display = 'none';</span>
+            <span class="s1">document.getElementById('nextBtnContainer').style.display = 'none';</span>
+            <span class="s1">document.getElementById('slide2').style.display = 'block';</span>
+            <span class="s1">document.getElementById('scrollArea').scrollTop = 0;</span>
+
+            <span class="s1">await typeEffect(document.getElementById('slide2Title'), slide2Content.title, 60);</span>
+            <span class="s1">await new Promise(r =&gt; setTimeout(r, 1000));</span>
+
+            <span class="s1">for (const text of slide2Content.paragraphs) {</span>
+                <span class="s1">const p = document.createElement('p');</span>
+                <span class="s1">p.className = 'reveal-text';</span>
+                <span class="s1">if(text.includes(&quot;cringey-an&quot;)) p.style.fontStyle = &quot;italic&quot;;</span>
+                <span class="s1">if(text.includes(&quot;Happy Valentine's&quot;)) {</span>
+                    <span class="s1">p.style.fontWeight = &quot;600&quot;; p.style.color = &quot;var(--heart-full)&quot;; p.style.textAlign = &quot;center&quot;;</span>
+                <span class="s1">}</span>
+                <span class="s1">document.getElementById('slide2Body').appendChild(p);</span>
+                <span class="s1">await typeEffect(p, text, 40);</span>
+                <span class="s1">await new Promise(r =&gt; setTimeout(r, 600));</span>
+            <span class="s1">}</span>
+            <span class="s1">confetti({ particleCount: 200, spread: 100, origin: { y: 0.8 } });</span>
+        <span class="s1">}</span>
+
+        <span class="s1">function createPetals() {</span>
+            <span class="s1">setInterval(() =&gt; {</span>
+                <span class="s1">const p = document.createElement('div');</span>
+                <span class="s1">p.className = 'petal';</span>
+                <span class="s1">const s = Math.random() * 15 + 10 + 'px';</span>
+                <span class="s1">p.style.width = s; p.style.height = s;</span>
+                <span class="s1">p.style.left = Math.random() * 100 + 'vw';</span>
+                <span class="s1">p.style.top = '-5vh';</span>
+                <span class="s1">p.style.animation = `petalFall ${Math.random() * 5 + 5}s linear forwards`;</span>
+                <span class="s1">document.body.appendChild(p);</span>
+                <span class="s1">setTimeout(() =&gt; p.remove(), 8000);</span>
+            <span class="s1">}, 500);</span>
+        <span class="s1">}</span>
+    <span class="s0">&lt;/script&gt;</span>
+<span class="s0">&lt;/body&gt;</span>
+<span class="s0">&lt;/html&gt;</span></pre>
+</body>
+</html>
